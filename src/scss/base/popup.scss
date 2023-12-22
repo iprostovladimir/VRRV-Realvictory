@@ -1,0 +1,135 @@
+body::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
+}
+body.popup-show::after {
+  opacity: 1;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 20px;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
+}
+.popup_show {
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
+}
+.popup_show .popup__content {
+  visibility: visible;
+  transform: scale(1);
+}
+.popup__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__content {
+  visibility: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease 0s;
+  background-color: var(--color-blck);
+  padding: rem(113) rem(43) rem(83);
+  width: 100%;
+  max-width: rem(948);
+  text-align: center;
+
+  @media (max-width: $tablet) {
+    padding: rem(41) rem(18) rem(40);
+  }
+  .lock & {
+    visibility: visible;
+  }
+}
+
+.popup__title {
+  margin-bottom: rem(30);
+  @media (max-width: $tablet) {
+    margin-bottom: rem(20);
+  }
+  @media (max-width: $mobileSmall) {
+    font-size: rem(20);
+    font-weight: 700;
+    line-height: 121%; /* 24.2px */
+    padding: rem(0) rem(40);
+  }
+}
+
+.popup__text {
+  font-size: rem(19);
+  font-weight: 700;
+  line-height: 130%; /* 24.7px */
+  margin-bottom: rem(50);
+
+  @media (max-width: $tablet) {
+    font-size: rem(16);
+    margin-bottom: rem(20);
+  }
+
+  @media (max-width: $mobileSmall) {
+    font-size: rem(14);
+    padding: rem(0) rem(30);
+  }
+}
+
+.popup__link {
+  font-family: "Xolonium";
+  font-size: rem(20);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: rem(20) rem(12);
+  border-radius: rem(10);
+  background: var(--color-alt);
+  transition: all $time $tr 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: rem(465);
+  margin: 0 auto;
+
+  @media (max-width: $tablet) {
+    font-size: rem(18);
+  }
+
+  @media (max-width: $mobileSmall) {
+    font-size: rem(14);
+    padding: rem(15.5) rem(12);
+  }
+}
+
+.popup__video {
+  @extend %responsiveVideo;
+}
+
+.popup-video {
+  .popup__content {
+    padding: 0px 0px 0px 0px;
+
+    @media (max-width: $tablet) {
+      padding: 0px 0px 0px 0px;
+    }
+  }
+}

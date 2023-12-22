@@ -1,0 +1,307 @@
+//========================================================================================================================================================
+.growth {
+  padding: rem(150) rem(0) rem(0);
+
+  @media (max-width: $tablet) {
+    padding: rem(60) rem(0) rem(0);
+  }
+  // .growth__container
+
+  &__container {
+  }
+
+  // .growth__title
+
+  &__title {
+    margin-bottom: rem(46);
+
+    @media (max-width: $tablet) {
+      margin-bottom: rem(32);
+    }
+  }
+
+  // .growth__row
+
+  &__row {
+    display: flex;
+    gap: rem(2);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: rem(0);
+    }
+  }
+
+  // .growth__column
+
+  &__column {
+    &:nth-child(2) {
+      width: 100%;
+    }
+  }
+
+  // .growth__column-img
+
+  &__column-img {
+    height: 100%;
+    overflow: hidden;
+    @media (max-width: $mobile) {
+      height: rem(400);
+    }
+
+    @media (max-width: $mobileSmall) {
+      height: rem(265);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        img,
+        picture {
+          transform: scale(1.1);
+        }
+      }
+    }
+    img,
+    picture {
+      height: 100%;
+      transition: all $time $tr 0s;
+      // max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      @media (min-width: $tablet) {
+        width: rem(945);
+      }
+
+      @media (min-width: $mobile) {
+        max-height: 100%;
+      }
+
+      @media (max-width: em(1600)) {
+        max-width: 100%;
+      }
+
+      @media (max-width: $tablet) {
+        height: rem(600);
+      }
+      @media (max-width: $mobile) {
+        transform: translate(0, rem(0));
+        height: rem(600);
+      }
+
+      @media (max-width: $mobileSmall) {
+        // max-height: 100%;
+        height: rem(280);
+      }
+    }
+  }
+
+  // .growth__column-items
+
+  &__column-items {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+
+    counter-reset: myCounter;
+  }
+
+  // .growth__column-item
+
+  &__column-item {
+    position: relative;
+    background: var(--color-blck);
+    // padding: rem(37) rem(40);
+    // min-height: rem(248);
+    padding: rem(18) rem(40);
+    min-height: rem(172);
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    transition: all $time $tr 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: var(--color-alt);
+
+        &::before {
+          color: var(--color-primary);
+        }
+
+        .item-growth__text {
+          &::before {
+            background: var(--color-primary);
+          }
+        }
+      }
+    }
+
+    @media (max-width: em(1300)) {
+      align-items: flex-end;
+    }
+
+    @media (max-width: $tablet) {
+      align-items: flex-start;
+      // padding: rem(24) rem(20) rem(30);
+      padding: rem(37) rem(40);
+      min-height: rem(248);
+    }
+    @media (max-width: $mobile) {
+      padding: rem(24) rem(20) rem(30);
+      min-height: rem(180);
+    }
+    &::before {
+      counter-increment: myCounter;
+      content: "0" counter(myCounter);
+      position: absolute;
+      left: rem(-95);
+      top: 50%;
+      transform: translate(0, -50%);
+      font-family: "Xolonium";
+      font-size: rem(100);
+      font-weight: 700;
+      line-height: 130%;
+      color: var(--color-alt);
+      transition: all $time $tr 0s;
+
+      @media (max-width: em(1300)) {
+        font-size: rem(80);
+      }
+
+      @media (max-width: $tablet) {
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 70%);
+      }
+
+      @media (max-width: $mobile) {
+        font-size: rem(50);
+        top: rem(-35);
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}
+
+.item-growth {
+  &:first-child {
+    .item-growth__list {
+      gap: rem(25);
+
+      @media (max-width: $mobileSmall) {
+        padding-top: rem(32);
+        padding-bottom: rem(16);
+        gap: rem(20);
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    .item-growth__list {
+      gap: rem(30);
+      margin-bottom: rem(12);
+
+      @media (max-width: $mobileSmall) {
+        padding-top: rem(22);
+        padding-bottom: rem(14);
+        gap: rem(16);
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .item-growth__list {
+      margin-bottom: rem(23);
+
+      @media (max-width: $mobileSmall) {
+        padding-bottom: rem(0);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // .item-growth__list
+
+  &__list {
+    // max-width: rem(586);
+    max-width: rem(715);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+    margin-left: auto;
+    margin-right: rem(40);
+
+    @media (max-width: em(1800)) {
+      max-width: rem(600);
+    }
+
+    @media (max-width: em(1700)) {
+      max-width: rem(500);
+    }
+
+    @media (max-width: em(1600)) {
+      max-width: rem(600);
+    }
+
+    @media (max-width: em(1300)) {
+      max-width: rem(500);
+    }
+
+    @media (min-width: $tablet) {
+      padding-left: rem(40);
+      padding-top: rem(10);
+      // margin: 0 auto;
+    }
+
+    @media (max-width: $tablet) {
+      max-width: 80%;
+    }
+
+    @media (max-width: $mobile) {
+      max-width: 100%;
+    }
+  }
+
+  // .item-growth__text
+
+  &__text {
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: 130%; /* 26px */
+
+    position: relative;
+    padding-left: rem(25);
+
+    @media (max-width: em(1700)) {
+      br {
+        display: none;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      font-size: rem(16);
+    }
+
+    @media (max-width: $mobileSmall) {
+      font-size: rem(14);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(15);
+      left: 0;
+      width: rem(16);
+      height: rem(2);
+      background: var(--color-alt);
+      transition: all $time $tr 0s;
+      @media (max-width: $mobile) {
+        top: rem(8);
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================

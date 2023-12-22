@@ -1,0 +1,142 @@
+//========================================================================================================================================================
+.control {
+  padding: rem(150) rem(0);
+
+  @media (max-width: $tablet) {
+    padding: rem(3) rem(0) rem(60);
+  }
+  // .control__container
+
+  &__container {
+  }
+
+  // .control__title
+
+  &__title {
+    padding: rem(0) rem(50);
+    margin-bottom: rem(50);
+
+    @media (max-width: em(1600)) {
+      padding: rem(0) rem(20);
+      margin-bottom: rem(30);
+    }
+  }
+
+  // .control__row
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(2);
+    // padding: rem(0) rem(5);
+    @media (max-width: em(1400)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  // .control__column
+
+  &__column {
+    position: relative;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .control__column-img {
+          img,
+          picture {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  // .control__column-img
+
+  &__column-img {
+    overflow: hidden;
+    aspect-ratio: 480 / 618;
+
+    @media (max-width: em(1400)) {
+      aspect-ratio: 957 / 618;
+    }
+
+    @media (max-width: $mobileSmall) {
+      aspect-ratio: 375 / 248;
+    }
+    img,
+    picture {
+      width: 100%;
+      // height: rem(618);
+      max-width: 100%;
+      max-height: 100%;
+      height: 100%;
+      transition: all $time $tr 0s;
+
+      object-fit: cover;
+    }
+  }
+
+  // .control__column-info
+
+  &__column-info {
+    position: absolute;
+    bottom: rem(48);
+    left: rem(52);
+    padding: rem(25) rem(18);
+    background: var(--color-blck);
+
+    font-size: rem(20);
+    font-weight: 700;
+    line-height: 130%; /* 26px */
+    letter-spacing: rem(0.4);
+
+    width: calc(100% - rem(102));
+
+    // display: -webkit-box;
+    // -webkit-line-clamp: 2;
+    // -webkit-box-orient: vertical;
+    // overflow: hidden;
+    @media (max-width: em(1500)) {
+      bottom: rem(20);
+      left: rem(20);
+      width: calc(100% - rem(40));
+      font-size: rem(16);
+      min-height: rem(102);
+      br {
+        display: none;
+      }
+    }
+
+    @media (max-width: em(1400)) {
+      min-height: auto;
+    }
+
+    @media (max-width: em(1300)) {
+      bottom: rem(30);
+      left: rem(30);
+    }
+
+    @media (max-width: $tablet) {
+      font-size: rem(16);
+      bottom: rem(15);
+      left: rem(17);
+      padding: rem(12) rem(20);
+      max-width: rem(286);
+    }
+
+    @media (max-width: $mobileSmall) {
+      font-size: rem(14);
+      letter-spacing: rem(0.28);
+
+      br {
+        display: block;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================

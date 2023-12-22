@@ -1,0 +1,202 @@
+//====================================================================================================
+.arena {
+  position: relative;
+  &::before {
+    content: "";
+    background: var(--bg) bottom center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  // .arena__inner
+
+  &__inner {
+    padding: rem(31) rem(50) rem(57);
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet) {
+      min-height: calc(100vh - rem(121));
+    }
+
+    @media (max-width: $tablet) {
+      //   min-height: calc(100vh - rem(105));
+      padding: rem(53) rem(20) rem(57);
+    }
+
+    @media (max-width: $mobile) {
+      //   min-height: calc(100vh - rem(80));
+    }
+  }
+
+  // .arena__title
+
+  &__title {
+    font-size: rem(50);
+    font-weight: 500;
+    line-height: 160%; /* 80px */
+    letter-spacing: rem(1);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: rem(20);
+
+    @media (min-width: $tablet) {
+      @media (max-height: em(1000)) {
+        font-size: rem(40);
+      }
+    }
+
+    @media (max-width: em(1400)) {
+      font-size: rem(35);
+    }
+
+    @media (max-width: $mobile) {
+      font-size: rem(30);
+      margin-bottom: rem(15);
+    }
+
+    @media (max-width: $mobileSmall) {
+      font-size: rem(16);
+      font-weight: 500;
+      line-height: 160%; /* 25.6px */
+      letter-spacing: rem(0.32);
+    }
+  }
+
+  // .arena__text
+
+  &__text {
+    font-family: "Xolonium";
+    font-size: rem(100);
+    font-weight: 700;
+    line-height: 130%;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: $tablet) {
+      flex: 1 1 auto;
+    }
+
+    span {
+      color: var(--color-alt);
+    }
+
+    @media (min-width: $tablet) {
+      @media (max-height: em(1000)) {
+        font-size: rem(80);
+        line-height: 120%;
+
+        ._rub {
+          &::after {
+            --size: 45px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: em(1700)) {
+      font-size: rem(80);
+    }
+
+    @media (max-width: em(1500)) {
+      font-size: rem(60);
+    }
+
+    @media (max-width: em(1400)) {
+      font-size: rem(55);
+    }
+
+    @media (max-width: em(1100)) {
+      font-size: rem(50);
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: rem(10);
+      font-size: rem(45);
+    }
+
+    @media (max-width: $mobile) {
+      font-size: rem(40);
+      line-height: 130%;
+    }
+
+    @media (max-width: $mobileSmall) {
+      font-size: rem(28);
+    }
+  }
+
+  // .arena__img
+
+  &__img {
+    @media (min-width: $tablet) {
+      display: none;
+    }
+    margin: rem(0) rem(-20) rem(0);
+    max-height: rem(428);
+    overflow: hidden;
+    img,
+    picture {
+      width: 100%;
+      height: rem(505);
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      transform: translate(0, rem(-100));
+      @media (max-width: $mobile) {
+        // height: rem(407);
+        height: rem(505);
+      }
+    }
+  }
+
+  // .arena__form
+
+  &__form {
+    background: #252525;
+    border-radius: rem(10);
+    padding: rem(50);
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: rem(20);
+
+    @media (min-width: $tablet) {
+      max-width: rem(573);
+    }
+
+    @media (max-width: $mobile) {
+      padding: rem(20);
+      gap: rem(10);
+    }
+
+    .form__items {
+      flex-direction: column;
+      // margin-bottom: rem(20);
+      gap: rem(20);
+      width: 100%;
+      @media (max-width: $mobile) {
+        gap: rem(10);
+        // margin-bottom: rem(10);
+      }
+    }
+
+    .form__btns {
+      width: 100%;
+    }
+
+    .form__item {
+      width: 100%;
+    }
+  }
+}
+
+//====================================================================================================

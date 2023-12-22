@@ -1,0 +1,108 @@
+//========================================================================================================================================================
+.treatment {
+  padding: rem(40) rem(0) rem(60);
+
+  @media (max-width: em(1600)) {
+    padding: rem(40) rem(0) rem(60);
+  }
+
+  @media (max-width: $tablet) {
+    padding: rem(40) rem(0) rem(60);
+  }
+  // .treatment__container
+
+  &__container {
+    padding: rem(0) rem(100) rem(0);
+
+    @media (max-width: em(1600)) {
+      padding: rem(0) rem(50) rem(0);
+    }
+
+    @media (max-width: $tablet) {
+      padding: rem(0) rem(20) rem(0);
+    }
+  }
+
+  // .treatment__title
+
+  &__title {
+    text-align: left;
+    margin-bottom: rem(40);
+
+    @media (max-width: $tablet) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  // .treatment__content
+
+  &__content {
+    ol {
+      counter-reset: item;
+
+      li {
+        display: block;
+
+        font-size: rem(24);
+        font-weight: 700;
+        line-height: normal;
+        margin-top: rem(20);
+
+        @media (max-width: $mobile) {
+          font-size: rem(18);
+        }
+
+        @media (max-width: $mobileSmall) {
+          font-size: rem(14);
+        }
+        span {
+          font-size: rem(18);
+          font-weight: 600;
+          line-height: normal;
+          display: block;
+          margin-top: rem(20);
+
+          @media (max-width: $mobile) {
+            font-size: rem(18);
+          }
+
+          @media (max-width: $mobileSmall) {
+            font-size: rem(14);
+          }
+        }
+
+        a {
+          @media (any-hover: hover) {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        ol {
+          li {
+            font-size: rem(18);
+            font-weight: 600;
+            line-height: normal;
+            margin-top: rem(20);
+
+            @media (max-width: $mobile) {
+              font-size: rem(18);
+            }
+
+            @media (max-width: $mobileSmall) {
+              font-size: rem(14);
+            }
+          }
+        }
+      }
+    }
+
+    li:before {
+      content: counters(item, ".") " ";
+      counter-increment: item;
+    }
+  }
+}
+
+//========================================================================================================================================================
